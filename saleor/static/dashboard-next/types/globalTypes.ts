@@ -11,6 +11,11 @@ export enum AddressTypeEnum {
   SHIPPING = "SHIPPING",
 }
 
+export enum AttributeInputTypeEnum {
+  DROPDOWN = "DROPDOWN",
+  MULTISELECT = "MULTISELECT",
+}
+
 export enum AttributeTypeEnum {
   PRODUCT = "PRODUCT",
   VARIANT = "VARIANT",
@@ -250,14 +255,21 @@ export interface AddressInput {
 }
 
 export interface AttributeAssignInput {
-  attributeId: string;
-  attributeType: AttributeTypeEnum;
+  id: string;
+  type: AttributeTypeEnum;
 }
 
 export interface AttributeCreateInput {
+  inputType?: AttributeInputTypeEnum | null;
   name: string;
   slug?: string | null;
   values?: (AttributeValueCreateInput | null)[] | null;
+  valueRequired?: boolean | null;
+  isVariantOnly?: boolean | null;
+  visibleInStorefront?: boolean | null;
+  filterableInStorefront?: boolean | null;
+  filterableInDashboard?: boolean | null;
+  storefrontSearchPosition?: number | null;
 }
 
 export interface AttributeInput {
@@ -270,6 +282,12 @@ export interface AttributeUpdateInput {
   slug?: string | null;
   removeValues?: (string | null)[] | null;
   addValues?: (AttributeValueCreateInput | null)[] | null;
+  valueRequired?: boolean | null;
+  isVariantOnly?: boolean | null;
+  visibleInStorefront?: boolean | null;
+  filterableInStorefront?: boolean | null;
+  filterableInDashboard?: boolean | null;
+  storefrontSearchPosition?: number | null;
 }
 
 export interface AttributeValueCreateInput {
@@ -278,8 +296,10 @@ export interface AttributeValueCreateInput {
 }
 
 export interface AttributeValueInput {
-  slug: string;
-  value: string;
+  id?: string | null;
+  name?: string | null;
+  slug?: string | null;
+  values: (string | null)[];
 }
 
 export interface AuthorizationKeyInput {
