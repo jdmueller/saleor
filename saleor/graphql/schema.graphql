@@ -2089,7 +2089,7 @@ type PaymentRefund {
 
 type PaymentSource {
   gateway: String!
-  creditCard: CreditCard
+  creditCardInfo: CreditCard
 }
 
 type PaymentVoid {
