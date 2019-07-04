@@ -16,6 +16,7 @@ All notable, unreleased changes to this project will be documented in this file.
 - Use "esModuleInterop" flag in tsconfig to simplify imports - #4372 by @dominik-zeglen
 - Use hooks instead of class component in forms - #4374 by @dominik-zeglen
 - Drop csrf token header from API client - #4357 by @dominik-zeglen
+- Add ability to store used payment sources in gateways, first implemented in Braintree - #4195 by @salwator
 
 ## 2.7.0
 
