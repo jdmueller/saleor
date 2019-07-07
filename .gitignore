@@ -38,3 +38,7 @@ webpack-bundle.json
 
 # Exported results file
 django-queries-results.html
+
+bin/
+pip-selfcheck.json
+saleor/settings.py
