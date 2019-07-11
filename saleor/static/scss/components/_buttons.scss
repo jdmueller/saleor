@@ -28,7 +28,7 @@ a.btn {
     color: $white;
     padding: $global-padding $global-padding * 4;
     &:hover {
-      background-color: #42beab;
+      background-color: $darken-blue;
       border: none;
       color: $white;
     }
@@ -39,8 +39,8 @@ a.btn {
     background-color: $white;
     color: $light-turquoise;
     &:hover {
-      border-color: #42beab;
-      color: #42beab;
+      border-color: $darken-blue;
+      color: $darken-blue;
     }
   }
   &.danger {

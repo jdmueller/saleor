@@ -119,7 +119,8 @@
               <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
             </div>
             <a href="{% url 'home' %}">
-              <svg data-src="{% static "images/logo-light.svg" %}"/>
+              <img class="d-none d-md-block" src="{% static "images/logo-Georgiabolditalic-armonia.png" %}" height='60'>
+              <img class="d-xs-block d-md-none" src="{% static "images/logo-Georgiabolditalic-armonia.png" %}" height='40'>
             </a>
           </div>
           <div class="col-2 col-md-5 navbar__search static">
@@ -255,28 +256,13 @@
         <div class="offset-md-2 col-md-4 col-12">
           <div class="footer__menus__social-container">
             <div class="footer__menus__social">
-              <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/mirumeelabs/">
+              <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/armoniaysalud.ec/">
                 <svg data-src="{% static "images/facebook-logo.svg" %}" width="45px" height="45px"/>
               </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://github.com/mirumee/saleor">
-                <svg data-src="{% static "images/github-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/getsaleor">
+              <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/ArmonaYSalud1">
                 <svg data-src="{% static "images/twitter-logo.svg" %}" width="45px" height="45px"/>
               </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://plus.google.com/+Mirumee">
-                <svg data-src="{% static "images/google-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://www.meetup.com/Mirumee-Talks/">
-                <svg data-src="{% static "images/meetup-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://linkedin.com/company/mirumee-software">
-                <svg data-src="{% static "images/linkedin-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://dribbble.com/mirumee">
-                <svg data-src="{% static "images/dribbble-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/explore/tags/mirumee/">
+              <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/esteticaarmoniaysalud/">
                 <svg data-src="{% static "images/instagram-logo.svg" %}" width="45px" height="45px"/>
               </a>
             </div>
@@ -285,15 +271,23 @@
       </div>
     </div>
   </div>
-  <div class="footer__copy">
+  <div class="footer__copy" style="vertical-align: middle;">
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-4">
-          <a href="{% url 'home' %}" class="footer__logo float-md-left">
-            <svg data-src="{% static "images/logo-light.svg" %}"/>
+          <a href="{% url 'home' %}" class="footer__logo">
+            <img class="d-none d-md-block" src="{% static "images/Logo-icon-small.png" %}" height='100'>
+            <img class="d-xs-block d-md-none" src="{% static "images/Logo-icon-small.png" %}" height='80'>
           </a>
         </div>
-        <div class="col-8 footer__copy-text">COPYRIGHT © 2009–2019 MIRUMEE SOFTWARE</div>
+        {% now 'Y' as copydate %}
+        <div class="col-xs-8 col-sm-8 col-md-7 col-8 footer__copy-text text-wrap">Derechos de Autor © {{ copydate }} | Armonia y Salud Centro Estético. Todos los derechos reservados.</div>
+        
+          <svg class="d-none d-md-block col-md-1 float-md-right icon-spin-reverse footer__logo" height='40' data-src="{% static "images/python-brands.svg" %}"/>
+        
+      </div>
+      <div class="col d-xs-block d-md-none" style="margin-top:20px; margin-bottom:0px;">
+        <svg class="icon-spin-reverse" height='40' data-src="{% static "images/python-brands.svg" %}"/>
       </div>
     </div>
   </div>
