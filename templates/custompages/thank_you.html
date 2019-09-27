@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load materializecss %}
+{% load bootstrap4 %}
+
+
+{% block title %}
+Gracias
+{% endblock %}
+
+{% block meta_tags %}
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta name="description" content="">
+
+
+  <meta property="og:url" content="{{ page_url }}">
+{% endblock meta_tags %}
+
+{% block breadcrumb %}
+  <ul class="breadcrumbs list-unstyled">
+    <li>
+      <a href="{% url 'home' %}">
+        {% trans "Home" context "Main navigation item" %}
+      </a>
+    </li>
+      <li>
+        <a href="">Gracias</a>
+      </li>
+  </ul>
+{% endblock breadcrumb %}
+
+{% block content %}
+<h1 class="/thank-you/">Gracias</h1>
+
+<h3>Su solicitud fue enviada con éxito.</h3>
+
+
+{% endblock %}

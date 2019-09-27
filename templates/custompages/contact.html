@@ -1,0 +1,199 @@
+{% extends "base_full_width.html" %}
+{% load i18n %}
+{% load materializecss %}
+{% load bootstrap4 %}
+{% load static %}
+
+
+{% block title %}
+pySolution - Contact Us
+{% endblock %}
+
+{% block meta_tags %}
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta name="description" content="">
+
+
+  <meta property="og:url" content="{{ page_url }}">
+{% endblock meta_tags %}
+
+{% block breadcrumb %}
+{% endblock breadcrumb %}
+
+{% block content %}
+
+<div id="d-none d-xl-block col-xl-3 fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=appidkey&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="d-none d-sm-block ml-0 mr-0 full-width" id="map" style='height: 450px;'></div>
+<script>
+function initMap() {
+	var uluru = {lat: 47.7986349, lng: -122.3775516};
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 10,
+		center: uluru, 
+		disableDefaultUI: false,
+		mapTypeId: 'hybrid'
+	});
+
+	var contentString = '<div id="content">'+
+            '<div class="text-center" id="siteNotice">'+
+            '</div>'+
+            '<h2 class="text-center" id="firstHeading" class="firstHeading">pySolution</h2>'+
+            '<div id="bodyContent">'+
+                '<p class="text-center"> <address>1220 6th Ave. S. Edmonds, Washington 98020</address>' +
+                '</p>'+
+            '</div>'+
+        '</div>';
+
+	var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 350
+    });
+
+	var marker = new google.maps.Marker({
+		position: uluru,
+		map: map
+	});
+
+	google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+        infowindow.open(map, marker);
+	});
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdRBFGK4XBuK6ROnNKh3dWgLEs2I8MUOM&callback=initMap"></script>
+
+<div class="container">
+
+    <ul class="breadcrumbs list-unstyled">
+    <li>
+      <a href="{% url 'home' %}">
+        {% trans "Home" context "Main navigation item" %}
+      </a>
+    </li>
+      <li>
+        <a href="/contact/">Contact</a>
+      </li>
+    </ul>
+
+
+    <div class="row">
+
+        <div class="col-md-12 col-lg-9">
+            <h1 class="">Contact Us</h1>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4 pt-4">
+                    <img src="/static/images/image-home-seattle.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="col-sm-12 col-md-8 pt-4">
+                    <div class="row border-bottom pb-2">
+                        <div class="col">
+                            <h4 class="">pySolution</h4>
+                        </div>
+
+                        <div class="col float-right text-right">
+                            <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/pySolutionCom/">
+                                <svg data-src="{% static "images/facebook-logo-contact.svg" %}" width="20px" height="20px"/>
+                            </a>
+                            <a target="_blank" rel="noopener" class="social-footer pl-2" href="https://twitter.com/py_Solution">
+                                <svg data-src="{% static "images/twitter-logo-contact.svg" %}" width="20px" height="20px"/>
+                            </a>
+                            <a target="_blank" rel="noopener" class="social-footer pl-2" href="https://www.instagram.com/py.solution/">
+                                <svg data-src="{% static "images/instagram-logo-contact.svg" %}" width="20px" height="20px"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="list-unstyled ml-2">
+                        <li class="pt-2">
+                            <svg class="mr-2" data-src="{% static "images/phone-solid.svg" %}" width="15px" height="15px"/>
+                            <a style="color:inherit;" href='tel:+1 (206) 504-3833'>
+                                <phone>+1 (206) 504-3833</phone>
+                            </a>
+                        </li>
+                        <li class="pt-1">
+                            <svg class="mr-2" data-src="{% static "images/envelope-solid.svg" %}" width="15px" height="15px"/>
+                            <a style="color:inherit;" href='mailto:info@pysolution.com'>
+                                <email>info@pysolution.com</email>
+                            </a>
+                        </li>
+                        <li class="pt-1">
+                            <svg class="mr-2" data-src="{% static "images/location-arrow-solid.svg" %}" width="15px" height="15px"/>
+                            1220 6th Ave. S. - Edmonds, Washington 98020
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="pt-5">
+                Before you <a href="/support/">submit a ticket</a> or contact us please check the <a href="/support/kb/">Knowledge Base</a> to see if your question has already been answered. If you are having trouble with a Solution that you have already purchased, please <a href="/support/">submit a ticket</a> and select the correct department. A customer support representative will be happy to assist you. If you have a general question or just feel like getting in touch with us please feel free to use the form below!
+            </p>
+
+            <div class='mt-5'>
+                <h4 class='{{ theme_settings.text_primary }}'>
+                    {% trans "Contact" %} Armonía y Salud
+                </h4>
+            </div>
+            <form action='.' method="POST">
+                {% csrf_token %}
+                <div class='row mt-3'>
+                    <div class='col mb-3'>{{ form.name }}</div>
+                    <div class='col mb-3'>{{ form.email }}</div>
+                    <div class='col mb-3'>{{ form.phone }}</div>
+                </div>
+                <div class='mb-3'>{{ form.message }}</div>
+                {% comment %} <div class='mb-3'>{{ form.captcha }}</div> {% endcomment %}
+                {% if form.errors %}
+                {% for field in form %}
+                {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+                {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <p class='text-left'>
+                    <button  type="submit" id="submitbutton" class="btn btn-primary btn-lg mb-5">
+                        {% trans "Send Email" %}
+                    </button>
+                </p>
+            </form>
+        </div>
+
+        <div class="d-none d-lg-block col-3">
+            <h5 class=''>
+                {% trans "Find us on Facebook!" %}
+            </h5>
+            <div class="fb-page" data-href="https://www.facebook.com/pySolutionCom/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/pySolutionCom/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/PySolutionCom/">
+                        pySolution on Facebook
+                    </a>
+                </blockquote>
+            </div>
+
+            <div class="pt-4">
+                <a class="twitter-timeline" data-width="300" data-height="700" data-theme="light" data-chrome="nofooter" href="https://twitter.com/py_Solution">
+                {% trans "Tweets by" %} pySolution
+                </a> 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

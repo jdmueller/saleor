@@ -19,6 +19,7 @@ from .order.urls import urlpatterns as order_urls
 from .page.urls import urlpatterns as page_urls
 from .product.urls import urlpatterns as product_urls
 from .search.urls import urlpatterns as search_urls
+from custompages.urls import urlpatterns as custompages_urls
 
 handler404 = "saleor.core.views.handle_404"
 
@@ -48,6 +49,8 @@ translatable_urlpatterns = [
 ]
 
 urlpatterns = non_translatable_urlpatterns + i18n_patterns(*translatable_urlpatterns)
+
+urlpatterns += custompages_urls
 
 if settings.DEBUG:
     import debug_toolbar

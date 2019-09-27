@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load materializecss %}
+{% load bootstrap4 %}
+
+
+{% block title %}
+About Us
+{% endblock %}
+
+{% block meta_tags %}
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta name="description" content="">
+
+
+  <meta property="og:url" content="{{ page_url }}">
+{% endblock meta_tags %}
+
+{% block breadcrumb %}
+  <ul class="breadcrumbs list-unstyled">
+    <li>
+      <a href="{% url 'home' %}">
+        {% trans "Home" context "Main navigation item" %}
+      </a>
+    </li>
+      <li>
+        <a href="/about/">About</a>
+      </li>
+  </ul>
+{% endblock breadcrumb %}
+
+{% block content %}
+<h1 class="">Team pySolution</h1>
+
+
+<div class="row pt-3">
+  <div class="col-md-12 col-lg-6">
+    <p>
+      So what exactly is a pySolution? To us, it is a <a href="/technology/">Python</a> based solution for an industry. <a href="/technology/">Python</a> runs the fundamental framework of all of our projects and is the building block that all other technologies are built upon. This is why all of our projects are fast, efficient and effective.
+    </p>
+    <p>
+      pySolution specializes in custom coded <a href="/technology/">Python</a> solutions for select markets including <a href="/products/category/real-estate-solutions-7/">Real Estate</a>, <a href="/products/category/e-commerce-solutions-11/">E-Commerce</a>, <a href="/products/category/medical-solutions-10/">Medical</a>, <a href="/products/category/legal-solutions-12/">Legal</a> and <a href="/products/category/fitness-solutions-13/">Fitness</a>. All of our projects are developed in house and custom coded to meet the highest market demands while using state of the art software technologies.
+    </p>
+  </div>
+
+  <div class="col-md-12 col-lg-6">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="/technology/">
+                  <img src="/static/images/python-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/technology/">
+                  <img src="/static/images/javascript-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/technology/">
+                  <img src="/static/images/react-native-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/technology/">
+                  <img src="/static/images/node-js-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/technology/">
+                  <img src="/static/images/typescript-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/technology/">
+                  <img src="/static/images/postgresql-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/technology/">
+                  <img src="/static/images/graphql-logo.png" class="d-block w-100" alt="...">
+                </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-6 col-lg-4 pt-5">
+    <div class="card bg-light">
+      <img src="/static/images/Team Passport Pictures-2000-26.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Jonathan Mueller</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Senior Developer</h6>
+        <p class="card-text">Server Administration, Development, Mobile Application Development, Graphic Design, Visual Effects</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 pt-5">
+    <div class="card bg-light">
+      <img src="/static/images/lourdes-mendoza.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Lourdes Mendoza</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Sales/Support</h6>
+        <p class="card-text">Technical Support, Sales Support, Social Media Marketing, Photography, Logo Design</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -40,5 +40,3 @@ webpack-bundle.json
 django-queries-results.html
 
 bin/
-pip-selfcheck.json
-saleor/settings.py

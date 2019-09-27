@@ -1,0 +1,82 @@
+{% extends "order/payment/details.html" %}
+{% load bootstrap_form from bootstrap4 %}
+{% load i18n %}
+{% load static %}
+
+{% block forms %}
+<div class="mb-2">
+  <img class="d-none d-md-block mt-4 mb-3" src="{% static "images/banco-pichincha.png" %}" height='50'>
+  <ul class="list-unstyled ml-3">
+    <li>
+      Bank: PICHINCHA
+    </li>
+    <li>
+      Cuenta Corriente: 2100068979
+    </li>
+    <li>
+      Nombre: Maria Magdalena Mendoza
+    </li>
+    <li>
+      RUC: 0959466368001
+    </li>
+    <li>
+      Cédula: 131291811-1
+    </li>
+    <li>
+      Código SWIFT: PICHECEQ
+    </li>
+    <li>
+      Dirección del Banco: Av. Amazonas N3934 y Alfonso Pereira
+    </li>
+    <li>
+      Ciudad del Banco: Quito
+    </li>
+    <li>
+      Provincia del Banco: Pichincha
+    </li>
+    <li>
+      País del Banco: Ecuador
+    </li>
+    <li>
+      Teléfono del Banco: (02) 2 980 980
+    </li>
+  </ul>
+</div>
+
+<div class="checkout__payment-form">
+  <form method="POST" id="payment-form" class="form-horizontal"{% if form.action %} action="{{ form.action }}"{% endif %} novalidate>
+    {% csrf_token %}
+    {% if form.errors or form.non_field_errors %}
+      <blockquote>
+        {% for non_field_error in form.non_field_errors %}
+          {{ non_field_error }}
+        {% endfor %}
+      </blockquote>
+    {% endif %}
+    {{ form.media }}
+    {% for choice in form.charge_status %}
+      <div class="radio d-none">
+        <label>
+          <div class="card card-default">
+            <div class="card-body">
+              <strong>
+                {{choice}}
+              </strong>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endfor %}
+    {% if form.errors %}
+      <a class="btn" href="{% url "order:details" token=payment.order.token %}">
+        {% trans "Change payment" context "Payment form (Stripe) secondary action" %}
+      </a>
+    {% endif %}
+    {% if not form.autosubmit %}
+      <button type="submit" class="btn btn-primary">
+        {% trans "Submit Order" context "Payment form primary action" %}
+      </button>
+    {% endif %}
+  </form>
+</div>
+{% endblock forms %}

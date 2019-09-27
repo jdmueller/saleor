@@ -545,15 +545,25 @@ SERIALIZATION_MODULES = {"json": "saleor.core.utils.json_serializer"}
 
 
 DUMMY = "dummy"
+BANKTRANSFER = "banktransfer"
 BRAINTREE = "braintree"
 RAZORPAY = "razorpay"
 STRIPE = "stripe"
 
 CHECKOUT_PAYMENT_GATEWAYS = {
-    DUMMY: pgettext_lazy("Payment method name", "Dummy gateway")
+    BANKTRANSFER: pgettext_lazy("Payment method name", "Bank Transfer"),
 }
 
 PAYMENT_GATEWAYS = {
+    BANKTRANSFER: {
+        "module": "saleor.payment.gateways.banktransfer",
+        "config": {
+            "auto_capture": True,
+            "store_card": False,
+            "connection_params": {},
+            "template_path": "order/payment/banktransfer.html",
+        },
+    },
     DUMMY: {
         "module": "saleor.payment.gateways.dummy",
         "config": {
