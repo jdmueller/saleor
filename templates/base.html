@@ -146,7 +146,7 @@
             <div class="navbar__brand__checkout float-right">
               <a rel="nofollow" class="checkout__icon" href="{% url "checkout:index" %}">
                 <span class="checkout-label d-none d-md-inline-block">
-                  {% trans "Your cart" context "Main navigation item" %}
+                  {% trans "Su carro" context "Main navigation item" %}
                 </span>
                 <div class="navbar__brand__checkout__icon">
                   <svg data-src="{% static "images/checkout.svg" %}" width="24" height="24"/>
@@ -206,7 +206,7 @@
             <hr />
             <li>
               <a rel="nofollow" href="{% url "checkout:index" %}">
-                {% trans "Your cart" context "Main navigation item" %}
+                {% trans "Su carro" context "Main navigation item" %}
               </a>
             </li>
             {% if user.is_authenticated %}

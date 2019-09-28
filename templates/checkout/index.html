@@ -27,13 +27,13 @@
       <div class="table__header d-none d-md-block">
         <div class="row">
           <div class="col-md-7">
-            <small>{% trans "Product" context "Checkout table header" %}</small>
+            <small>{% trans "Producto" context "Checkout table header" %}</small>
           </div>
           <div class="col-md-3">
-            <small>{% trans "Quantity" context "Checkout table header" %}</small>
+            <small>{% trans "Cantidad" context "Checkout table header" %}</small>
           </div>
           <div class="col-md-2 text-right">
-            <small>{% trans "Price" context "Checkout table header" %}</small>
+            <small>{% trans "Precio" context "Checkout table header" %}</small>
           </div>
         </div>
       </div>
@@ -78,18 +78,18 @@
       <div class="row">
         <div class="col-md-12">
             <a href="{% url "checkout:login" %}" class="btn btn-primary float-right checkout-preview__submit">
-            {% trans "Checkout" context "Checkout primary action" %}
+            {% trans "Revisa" context "Checkout primary action" %}
           </a>
             <button class="btn secondary float-right checkout-preview__clear" data-action="{% url 'checkout:clear' %}">
-            {% trans "Clear cart" context "checkout page: secondary action, empty the checkout" %}
+            {% trans "Vaciar carrito" context "checkout page: secondary action, empty the checkout" %}
           </button>
         </div>
       </div>
     {% else %}
       <div class="checkout-preview__empty">
         <img class="lazyload lazypreload" data-src="{% static 'images/empty-checkout-bg.png' %}" data-srcset="{% static 'images/empty-checkout-bg.png' %} 1x, {% static 'images/empty-checkout-bg2x.png' %} 2x">
-        <h2>{% trans "There are no products in your shopping cart." context "Empty checkout message" %}</h2>
-        <a href="{% url 'home' %}" class="btn btn-primary">{% trans "Check out our sales" context "Empty checkout link" %}</a>
+        <h2>{% trans "No hay productos en tu carrito de compras." context "Empty checkout message" %}</h2>
+        <a href="{% url 'home' %}" class="btn btn-primary">{% trans "Mira nuestras ventas" context "Empty checkout link" %}</a>
       </div>
     {% endif %}
   </div>
