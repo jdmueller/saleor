@@ -35,9 +35,9 @@ pySolution - Contact Us
 <div class="d-none d-sm-block ml-0 mr-0 full-width" id="map" style='height: 450px;'></div>
 <script>
 function initMap() {
-	var uluru = {lat: 47.7986349, lng: -122.3775516};
+	var uluru = {lat: -0.1813121, lng: -78.5112097};
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 10,
+		zoom: 12,
 		center: uluru, 
 		disableDefaultUI: false,
 		mapTypeId: 'hybrid'
@@ -46,9 +46,9 @@ function initMap() {
 	var contentString = '<div id="content">'+
             '<div class="text-center" id="siteNotice">'+
             '</div>'+
-            '<h2 class="text-center" id="firstHeading" class="firstHeading">pySolution</h2>'+
+            '<h2 class="text-center" id="firstHeading" class="firstHeading">Armonía y Salud</h2>'+
             '<div id="bodyContent">'+
-                '<p class="text-center"> <address>1220 6th Ave. S. Edmonds, Washington 98020</address>' +
+                '<p class="text-center"> <address>Av. Mariana de Jesus y Antonia de Espíritu Santo</address>' +
                 '</p>'+
             '</div>'+
         '</div>';
@@ -79,7 +79,7 @@ function initMap() {
       </a>
     </li>
       <li>
-        <a href="/contact/">Contact</a>
+        <a href="/contacto/">Contacto</a>
       </li>
     </ul>
 
@@ -87,16 +87,16 @@ function initMap() {
     <div class="row">
 
         <div class="col-md-12 col-lg-9">
-            <h1 class="">Contact Us</h1>
+            <h1 class="">Contacto</h1>
 
             <div class="row">
                 <div class="col-sm-12 col-md-4 pt-4">
-                    <img src="/static/images/image-home-seattle.jpg" class="card-img-top" alt="...">
+                    <img src="/static/images/armonia-contact.jpg" class="card-img-top" alt="...">
                 </div>
                 <div class="col-sm-12 col-md-8 pt-4">
                     <div class="row border-bottom pb-2">
                         <div class="col">
-                            <h4 class="">pySolution</h4>
+                            <h4 class="">Armonía y Salud</h4>
                         </div>
 
                         <div class="col float-right text-right">
@@ -113,27 +113,48 @@ function initMap() {
                     </div>
 
                     <ul class="list-unstyled ml-2">
-                        <li class="pt-2">
+                        <h2 class="pt-2">Quito</h2>
+                        <li class="">
                             <svg class="mr-2" data-src="{% static "images/phone-solid.svg" %}" width="15px" height="15px"/>
                             <a style="color:inherit;" href='tel:+1 (206) 504-3833'>
-                                <phone>+1 (206) 504-3833</phone>
+                                <phone>0996587585</phone>
                             </a>
                         </li>
                         <li class="pt-1">
                             <svg class="mr-2" data-src="{% static "images/envelope-solid.svg" %}" width="15px" height="15px"/>
-                            <a style="color:inherit;" href='mailto:info@pysolution.com'>
-                                <email>info@pysolution.com</email>
+                            <a style="color:inherit;" href='mailto:info@armoniaysaludestetica.com.ec'>
+                                <email>info@armoniaysaludestetica.com.ec</email>
                             </a>
                         </li>
                         <li class="pt-1">
                             <svg class="mr-2" data-src="{% static "images/location-arrow-solid.svg" %}" width="15px" height="15px"/>
-                            1220 6th Ave. S. - Edmonds, Washington 98020
+                            Av. Mariana de Jesus y Antonia de Espíritu Santo
+                        </li>
+                    </ul>
+
+                    <ul class="list-unstyled ml-2">
+                        <h2 class="pt-2">Portoviejo</h2>
+                        <li class="">
+                            <svg class="mr-2" data-src="{% static "images/phone-solid.svg" %}" width="15px" height="15px"/>
+                            <a style="color:inherit;" href='tel:+1 (206) 504-3833'>
+                                <phone>0996587585</phone>
+                            </a>
+                        </li>
+                        <li class="pt-1">
+                            <svg class="mr-2" data-src="{% static "images/envelope-solid.svg" %}" width="15px" height="15px"/>
+                            <a style="color:inherit;" href='mailto:info@armoniaysaludestetica.com.ec'>
+                                <email>info@armoniaysaludestetica.com.ec</email>
+                            </a>
+                        </li>
+                        <li class="pt-1">
+                            <svg class="mr-2" data-src="{% static "images/location-arrow-solid.svg" %}" width="15px" height="15px"/>
+                            Av. Olímpica y Calle Santa Ana, Diagonal a la Universidad San Gregorio
                         </li>
                     </ul>
                 </div>
             </div>
             <p class="pt-5">
-                Before you <a href="/support/">submit a ticket</a> or contact us please check the <a href="/support/kb/">Knowledge Base</a> to see if your question has already been answered. If you are having trouble with a Solution that you have already purchased, please <a href="/support/">submit a ticket</a> and select the correct department. A customer support representative will be happy to assist you. If you have a general question or just feel like getting in touch with us please feel free to use the form below!
+                En Centro Estético Armonía y Salud te ofrecemos los mejores tratamientos con aplicaciones de la mano de la profesional y con varios años de experiencia, Cosmiatra Magdalena Mendoza. Tratamientos corporales, faciales, tratamiento de reducción de peso y nutrición. Iniciamos nuestra trayectoria un Junio  del 2012 en la ciudad de Bahia de Caráquez. A lo largo de de los años nos complace en tener clientes satisfechos y que aun nos visitan por el servicio profesional que se les ha brindado. A todos nuestros clientes y futuros clientes les invitamos a que sean parte de nuestra comunidad, no solo estética, si no de salud corporal. Te esperamos en nuestro centro en la ciudad de Quito. Todas nuestros tratamientos son bajo cita previa y completamente personalizados. Si estas en la proviencia de Manabi contactanos para agendar una visita. 
             </p>
 
             <div class='mt-5'>
@@ -176,17 +197,17 @@ function initMap() {
             <h5 class=''>
                 {% trans "Find us on Facebook!" %}
             </h5>
-            <div class="fb-page" data-href="https://www.facebook.com/pySolutionCom/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/pySolutionCom/" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/PySolutionCom/">
-                        pySolution on Facebook
+            <div class="fb-page" data-href="https://www.facebook.com/armoniaysalud.ec/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/armoniaysalud.ec/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/armoniaysalud.ec/">
+                        Armonía y Salud on Facebook
                     </a>
                 </blockquote>
             </div>
 
             <div class="pt-4">
-                <a class="twitter-timeline" data-width="300" data-height="700" data-theme="light" data-chrome="nofooter" href="https://twitter.com/py_Solution">
-                {% trans "Tweets by" %} pySolution
+                <a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" data-chrome="nofooter" href="https://twitter.com/ArmonaYSalud1">
+                {% trans "Tweets by" %} Armonía y Salud
                 </a> 
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
