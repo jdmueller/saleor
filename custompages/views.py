@@ -29,7 +29,7 @@ def contact(request):
                        '\n\n Email: ' + email + '\n\n Subject: ' + subject +
                        '\n\nMessage:\n ' + form.cleaned_data['message'] +
                        '\n\nMessage sent from contact page')
-            recipients = ['info@pysolution.com']
+            recipients = ['info@armoniaysaludestetica.com.ec']
             send_mail(subject, message, sender, recipients)
             submit_time = datetime.datetime.now()
             message = form.cleaned_data['message']

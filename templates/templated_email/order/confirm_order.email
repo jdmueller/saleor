@@ -8,6 +8,7 @@
 
 {% block plain %}
 {% include 'templated_email/shared/_header.email' %}
+Su pedido será enviado en las próximas 48 horas.
 {% blocktrans context "Order confirmation e-mail text" %}
 Thank you for your order. Below is the list of ordered products. To see your payment details please visit:
 {{ order_details_url }}{% endblocktrans %}
