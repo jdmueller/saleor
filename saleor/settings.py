@@ -41,6 +41,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+SERVER_EMAIL = os.environ.get("SERVER_EMAIL", "server@armoniaysaludestetica.com.ec")
+
 INTERNAL_IPS = get_list(os.environ.get("INTERNAL_IPS", "127.0.0.1"))
 
 # Some cloud providers (Heroku) export REDIS_URL variable instead of CACHE_URL
